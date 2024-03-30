@@ -1,0 +1,74 @@
+/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/torch/cuda/amp/grad_scaler.py:125: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(
+Traceback (most recent call last):
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs.py", line 168, in <module>
+    loss_value = criterion(outputs, test[:,2]).item()
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/losses.py", line 45, in forward
+    numerator = torch.exp(positives / self.temperature)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1695, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'NTXEntLoss' object has no attribute 'temperature'
+Exception in thread NetStatThr:
+Traceback (most recent call last):
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/threading.py", line 980, in _bootstrap_inner
+    self.run()
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/threading.py", line 917, in run
+Exception in thread IntMsgThr:
+Traceback (most recent call last):
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/threading.py", line 980, in _bootstrap_inner
+    self._target(*self._args, **self._kwargs)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 267, in check_network_status
+    self._loop_check_status(
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 223, in _loop_check_status
+    self.run()
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/threading.py", line 917, in run
+    local_handle = request()
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/interface/interface.py", line 735, in deliver_network_status
+    self._target(*self._args, **self._kwargs)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 299, in check_internal_messages
+    return self._deliver_network_status(status)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/interface/interface_shared.py", line 475, in _deliver_network_status
+    self._loop_check_status(
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 223, in _loop_check_status
+    return self._deliver_record(record)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/interface/interface_shared.py", line 428, in _deliver_record
+    local_handle = request()
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/interface/interface.py", line 743, in deliver_internal_messages
+    handle = mailbox._deliver_record(record, interface=self)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/lib/mailbox.py", line 455, in _deliver_record
+    return self._deliver_internal_messages(internal_message)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/interface/interface_shared.py", line 481, in _deliver_internal_messages
+    interface._publish(record)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/interface/interface_sock.py", line 51, in _publish
+    return self._deliver_record(record)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/interface/interface_shared.py", line 428, in _deliver_record
+    self._sock_client.send_record_publish(record)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 221, in send_record_publish
+    handle = mailbox._deliver_record(record, interface=self)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/lib/mailbox.py", line 455, in _deliver_record
+    self.send_server_request(server_req)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 155, in send_server_request
+    interface._publish(record)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/interface/interface_sock.py", line 51, in _publish
+    self._send_message(msg)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 152, in _send_message
+    self._sock_client.send_record_publish(record)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 221, in send_record_publish
+    self._sendall_with_error_handle(header + data)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 130, in _sendall_with_error_handle
+    self.send_server_request(server_req)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 155, in send_server_request
+    sent = self._sock.send(data)
+BrokenPipeError: [Errno 32] Broken pipe
+    self._send_message(msg)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 152, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+BrokenPipeError: [Errno 32] Broken pipe

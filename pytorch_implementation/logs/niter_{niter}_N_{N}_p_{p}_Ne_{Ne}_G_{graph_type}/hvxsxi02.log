@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs_cuda.py", line 183, in <module>
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/model_graph.py", line 59, in compute_bias
+    if np.sum(filt1) > 0 and np.sum(filt2) > 0:
+  File "/om2/user/mikail/miniconda3/envs/graphreps/lib/python3.10/site-packages/numpy/core/fromnumeric.py", line 2172, in _sum_dispatcher
+    def _sum_dispatcher(a, axis=None, dtype=None, out=None, keepdims=None,
+KeyboardInterrupt

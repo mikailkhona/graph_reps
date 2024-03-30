@@ -1,0 +1,7 @@
+> /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs_cuda.py(145)<module>()
+-> with torch.amp.autocast(device_type='cuda', dtype=torch.float16):
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) 

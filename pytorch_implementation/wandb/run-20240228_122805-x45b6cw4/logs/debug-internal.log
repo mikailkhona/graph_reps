@@ -1,0 +1,196 @@
+2024-02-28 12:28:05,173 INFO    StreamThr :1855894 [internal.py:wandb_internal():86] W&B internal server running at pid: 1855894, started at: 2024-02-28 12:28:05.170497
+2024-02-28 12:28:05,175 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: status
+2024-02-28 12:28:05,180 INFO    WriterThread:1855894 [datastore.py:open_for_write():85] open: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/run-x45b6cw4.wandb
+2024-02-28 12:28:05,184 DEBUG   SenderThread:1855894 [sender.py:send():380] send: header
+2024-02-28 12:28:05,215 DEBUG   SenderThread:1855894 [sender.py:send():380] send: run
+2024-02-28 12:28:05,509 INFO    SenderThread:1855894 [dir_watcher.py:__init__():211] watching files in: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files
+2024-02-28 12:28:05,510 INFO    SenderThread:1855894 [sender.py:_start_run_threads():1122] run started: x45b6cw4 with start time 1709141285.175035
+2024-02-28 12:28:05,519 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: check_version
+2024-02-28 12:28:05,519 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: check_version
+2024-02-28 12:28:05,629 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: run_start
+2024-02-28 12:28:05,637 DEBUG   HandlerThread:1855894 [system_info.py:__init__():32] System info init
+2024-02-28 12:28:05,637 DEBUG   HandlerThread:1855894 [system_info.py:__init__():47] System info init done
+2024-02-28 12:28:05,637 INFO    HandlerThread:1855894 [system_monitor.py:start():194] Starting system monitor
+2024-02-28 12:28:05,637 INFO    SystemMonitor:1855894 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-02-28 12:28:05,639 INFO    SystemMonitor:1855894 [interfaces.py:start():190] Started cpu monitoring
+2024-02-28 12:28:05,639 INFO    HandlerThread:1855894 [system_monitor.py:probe():214] Collecting system info
+2024-02-28 12:28:05,644 INFO    SystemMonitor:1855894 [interfaces.py:start():190] Started disk monitoring
+2024-02-28 12:28:05,646 INFO    SystemMonitor:1855894 [interfaces.py:start():190] Started gpu monitoring
+2024-02-28 12:28:05,650 INFO    SystemMonitor:1855894 [interfaces.py:start():190] Started memory monitoring
+2024-02-28 12:28:05,652 INFO    SystemMonitor:1855894 [interfaces.py:start():190] Started network monitoring
+2024-02-28 12:28:05,764 DEBUG   HandlerThread:1855894 [system_info.py:probe():196] Probing system
+2024-02-28 12:28:05,773 DEBUG   HandlerThread:1855894 [system_info.py:_probe_git():181] Probing git
+2024-02-28 12:28:05,801 DEBUG   HandlerThread:1855894 [system_info.py:_probe_git():189] Probing git done
+2024-02-28 12:28:05,801 DEBUG   HandlerThread:1855894 [system_info.py:probe():244] Probing system done
+2024-02-28 12:28:05,801 DEBUG   HandlerThread:1855894 [system_monitor.py:probe():223] {'os': 'Linux-4.18.0-372.9.1.el8.x86_64-x86_64-with-glibc2.28', 'python': '3.9.18', 'heartbeatAt': '2024-02-28T17:28:05.764810', 'startedAt': '2024-02-28T17:28:05.119896', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs.py', 'codePathLocal': 'train_graphs.py', 'codePath': 'pytorch_implementation/train_graphs.py', 'git': {'remote': 'git@github.com:greddy992/graph-reps.git', 'commit': '9cf1e28b8b95bd0892df4f86779caf0902226d55'}, 'email': None, 'root': '/rdma/vast-rdma/vast/fiete/mikail/graph-reps', 'host': 'node106', 'username': 'mikail', 'executable': '/om2/user/mikail/miniconda3/envs/rlincontext/bin/python3', 'cpu_count': 128, 'cpu_count_logical': 256, 'cpu_freq': {'current': 2.2747187500000017, 'min': 1500.0, 'max': 2000.0}, 'cpu_freq_per_core': [{'current': 2.633, 'min': 1500.0, 'max': 2000.0}, {'current': 2.633, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.633, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.58, 'min': 1500.0, 'max': 2000.0}, {'current': 2.632, 'min': 1500.0, 'max': 2000.0}, {'current': 2.633, 'min': 1500.0, 'max': 2000.0}, {'current': 2.633, 'min': 1500.0, 'max': 2000.0}, {'current': 2.632, 'min': 1500.0, 'max': 2000.0}, {'current': 2.633, 'min': 1500.0, 'max': 2000.0}, {'current': 2.633, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.633, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.634, 'min': 1500.0, 'max': 2000.0}, {'current': 2.634, 'min': 1500.0, 'max': 2000.0}, {'current': 2.638, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.634, 'min': 1500.0, 'max': 2000.0}, {'current': 2.634, 'min': 1500.0, 'max': 2000.0}, {'current': 2.634, 'min': 1500.0, 'max': 2000.0}, {'current': 2.634, 'min': 1500.0, 'max': 2000.0}, {'current': 2.633, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.634, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.584, 'min': 1500.0, 'max': 2000.0}, {'current': 2.624, 'min': 1500.0, 'max': 2000.0}, {'current': 2.584, 'min': 1500.0, 'max': 2000.0}, {'current': 2.624, 'min': 1500.0, 'max': 2000.0}, {'current': 2.595, 'min': 1500.0, 'max': 2000.0}, {'current': 2.595, 'min': 1500.0, 'max': 2000.0}, {'current': 2.625, 'min': 1500.0, 'max': 2000.0}, {'current': 2.625, 'min': 1500.0, 'max': 2000.0}, {'current': 2.828, 'min': 1500.0, 'max': 2000.0}, {'current': 2.828, 'min': 1500.0, 'max': 2000.0}, {'current': 2.834, 'min': 1500.0, 'max': 2000.0}, {'current': 2.83, 'min': 1500.0, 'max': 2000.0}, {'current': 2.833, 'min': 1500.0, 'max': 2000.0}, {'current': 2.8, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.828, 'min': 1500.0, 'max': 2000.0}, {'current': 2.807, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.725, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.829, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.753, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.795, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.731, 'min': 1500.0, 'max': 2000.0}, {'current': 2.72, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.667, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.829, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.829, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.826, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.627, 'min': 1500.0, 'max': 2000.0}, {'current': 2.627, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.31, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.607, 'min': 1500.0, 'max': 2000.0}, {'current': 2.579, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.607, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.628, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.628, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.628, 'min': 1500.0, 'max': 2000.0}, {'current': 2.628, 'min': 1500.0, 'max': 2000.0}, {'current': 2.628, 'min': 1500.0, 'max': 2000.0}, {'current': 2.628, 'min': 1500.0, 'max': 2000.0}, {'current': 2.628, 'min': 1500.0, 'max': 2000.0}, {'current': 2.602, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.582, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.621, 'min': 1500.0, 'max': 2000.0}, {'current': 2.621, 'min': 1500.0, 'max': 2000.0}, {'current': 2.551, 'min': 1500.0, 'max': 2000.0}, {'current': 2.621, 'min': 1500.0, 'max': 2000.0}, {'current': 2.63, 'min': 1500.0, 'max': 2000.0}, {'current': 2.619, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.633, 'min': 1500.0, 'max': 2000.0}, {'current': 2.633, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.629, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.629, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.61, 'min': 1500.0, 'max': 2000.0}, {'current': 2.61, 'min': 1500.0, 'max': 2000.0}, {'current': 2.61, 'min': 1500.0, 'max': 2000.0}, {'current': 2.825, 'min': 1500.0, 'max': 2000.0}, {'current': 2.825, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.824, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.824, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.824, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.822, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.746, 'min': 1500.0, 'max': 2000.0}, {'current': 2.744, 'min': 1500.0, 'max': 2000.0}, {'current': 2.752, 'min': 1500.0, 'max': 2000.0}, {'current': 2.795, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.799, 'min': 1500.0, 'max': 2000.0}, {'current': 2.709, 'min': 1500.0, 'max': 2000.0}, {'current': 2.667, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.824, 'min': 1500.0, 'max': 2000.0}, {'current': 2.824, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.823, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.824, 'min': 1500.0, 'max': 2000.0}, {'current': 2.824, 'min': 1500.0, 'max': 2000.0}, {'current': 2.824, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.824, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}, {'current': 2.806, 'min': 1500.0, 'max': 2000.0}, {'current': 2.824, 'min': 1500.0, 'max': 2000.0}, {'current': 2.0, 'min': 1500.0, 'max': 2000.0}], 'disk': {'/': {'total': 1856.8546104431152, 'used': 430.7386169433594}}, 'gpu': 'NVIDIA A100 80GB PCIe', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA A100 80GB PCIe', 'memory_total': 85899345920}], 'memory': {'total': 1007.4389724731445}}
+2024-02-28 12:28:05,803 INFO    HandlerThread:1855894 [system_monitor.py:probe():224] Finished collecting system info
+2024-02-28 12:28:05,803 INFO    HandlerThread:1855894 [system_monitor.py:probe():227] Publishing system info
+2024-02-28 12:28:05,803 DEBUG   HandlerThread:1855894 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2024-02-28 12:28:05,808 DEBUG   HandlerThread:1855894 [system_info.py:_save_pip():68] Saving pip packages done
+2024-02-28 12:28:05,808 DEBUG   HandlerThread:1855894 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2024-02-28 12:28:06,514 INFO    Thread-12 :1855894 [dir_watcher.py:_on_file_created():271] file/dir created: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/requirements.txt
+2024-02-28 12:28:06,515 INFO    Thread-12 :1855894 [dir_watcher.py:_on_file_created():271] file/dir created: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/conda-environment.yaml
+2024-02-28 12:28:10,377 DEBUG   HandlerThread:1855894 [system_info.py:_save_conda():87] Saving conda packages done
+2024-02-28 12:28:10,383 INFO    HandlerThread:1855894 [system_monitor.py:probe():229] Finished publishing system info
+2024-02-28 12:28:10,393 DEBUG   SenderThread:1855894 [sender.py:send():380] send: files
+2024-02-28 12:28:10,393 INFO    SenderThread:1855894 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2024-02-28 12:28:10,394 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: status_report
+2024-02-28 12:28:10,407 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-28 12:28:10,407 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-28 12:28:10,408 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: stop_status
+2024-02-28 12:28:10,521 INFO    Thread-12 :1855894 [dir_watcher.py:_on_file_modified():288] file/dir modified: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/conda-environment.yaml
+2024-02-28 12:28:10,522 INFO    Thread-12 :1855894 [dir_watcher.py:_on_file_created():271] file/dir created: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/wandb-metadata.json
+2024-02-28 12:28:10,579 DEBUG   SenderThread:1855894 [sender.py:send():380] send: telemetry
+2024-02-28 12:28:10,579 DEBUG   SenderThread:1855894 [sender.py:send():380] send: telemetry
+2024-02-28 12:28:10,579 DEBUG   SenderThread:1855894 [sender.py:send():380] send: run
+2024-02-28 12:28:10,768 INFO    wandb-upload_0:1855894 [upload_job.py:push():131] Uploaded file /tmp/tmp_odxsbqfwandb/39srg9ba-wandb-metadata.json
+2024-02-28 12:28:11,521 INFO    Thread-12 :1855894 [dir_watcher.py:_on_file_modified():288] file/dir modified: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/config.yaml
+2024-02-28 12:28:15,809 INFO    SenderThread:1855894 [sender.py:send_run():1000] updated run: x45b6cw4
+2024-02-28 12:28:15,811 DEBUG   SenderThread:1855894 [sender.py:send():380] send: telemetry
+2024-02-28 12:28:15,811 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: status_report
+2024-02-28 12:28:16,531 INFO    Thread-12 :1855894 [dir_watcher.py:_on_file_created():271] file/dir created: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/output.log
+2024-02-28 12:28:18,533 INFO    Thread-12 :1855894 [dir_watcher.py:_on_file_modified():288] file/dir modified: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/output.log
+2024-02-28 12:28:20,816 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: status_report
+2024-02-28 12:28:24,873 DEBUG   SenderThread:1855894 [sender.py:send():380] send: exit
+2024-02-28 12:28:24,873 INFO    SenderThread:1855894 [sender.py:send_exit():585] handling exit code: 1
+2024-02-28 12:28:24,874 INFO    SenderThread:1855894 [sender.py:send_exit():587] handling runtime: 19
+2024-02-28 12:28:24,879 INFO    SenderThread:1855894 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-02-28 12:28:24,879 INFO    SenderThread:1855894 [sender.py:send_exit():593] send defer
+2024-02-28 12:28:24,880 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: defer
+2024-02-28 12:28:24,880 INFO    HandlerThread:1855894 [handler.py:handle_request_defer():172] handle defer: 0
+2024-02-28 12:28:24,881 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: defer
+2024-02-28 12:28:24,882 INFO    SenderThread:1855894 [sender.py:send_request_defer():609] handle sender defer: 0
+2024-02-28 12:28:24,882 INFO    SenderThread:1855894 [sender.py:transition_state():613] send defer: 1
+2024-02-28 12:28:24,882 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: defer
+2024-02-28 12:28:24,882 INFO    HandlerThread:1855894 [handler.py:handle_request_defer():172] handle defer: 1
+2024-02-28 12:28:24,882 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: defer
+2024-02-28 12:28:24,883 INFO    SenderThread:1855894 [sender.py:send_request_defer():609] handle sender defer: 1
+2024-02-28 12:28:24,883 INFO    SenderThread:1855894 [sender.py:transition_state():613] send defer: 2
+2024-02-28 12:28:24,883 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: defer
+2024-02-28 12:28:24,883 INFO    HandlerThread:1855894 [handler.py:handle_request_defer():172] handle defer: 2
+2024-02-28 12:28:24,883 INFO    HandlerThread:1855894 [system_monitor.py:finish():203] Stopping system monitor
+2024-02-28 12:28:24,904 DEBUG   SystemMonitor:1855894 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-02-28 12:28:24,904 DEBUG   SystemMonitor:1855894 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-02-28 12:28:24,904 DEBUG   SystemMonitor:1855894 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-02-28 12:28:24,908 INFO    HandlerThread:1855894 [interfaces.py:finish():202] Joined cpu monitor
+2024-02-28 12:28:24,908 INFO    HandlerThread:1855894 [interfaces.py:finish():202] Joined disk monitor
+2024-02-28 12:28:25,322 INFO    HandlerThread:1855894 [interfaces.py:finish():202] Joined gpu monitor
+2024-02-28 12:28:25,323 INFO    HandlerThread:1855894 [interfaces.py:finish():202] Joined memory monitor
+2024-02-28 12:28:25,324 INFO    HandlerThread:1855894 [interfaces.py:finish():202] Joined network monitor
+2024-02-28 12:28:25,326 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: defer
+2024-02-28 12:28:25,327 INFO    SenderThread:1855894 [sender.py:send_request_defer():609] handle sender defer: 2
+2024-02-28 12:28:25,328 INFO    SenderThread:1855894 [sender.py:transition_state():613] send defer: 3
+2024-02-28 12:28:25,328 DEBUG   SenderThread:1855894 [sender.py:send():380] send: stats
+2024-02-28 12:28:25,328 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: defer
+2024-02-28 12:28:25,330 INFO    HandlerThread:1855894 [handler.py:handle_request_defer():172] handle defer: 3
+2024-02-28 12:28:25,330 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: defer
+2024-02-28 12:28:25,331 INFO    SenderThread:1855894 [sender.py:send_request_defer():609] handle sender defer: 3
+2024-02-28 12:28:25,331 INFO    SenderThread:1855894 [sender.py:transition_state():613] send defer: 4
+2024-02-28 12:28:25,331 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: defer
+2024-02-28 12:28:25,332 INFO    HandlerThread:1855894 [handler.py:handle_request_defer():172] handle defer: 4
+2024-02-28 12:28:25,332 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: defer
+2024-02-28 12:28:25,333 INFO    SenderThread:1855894 [sender.py:send_request_defer():609] handle sender defer: 4
+2024-02-28 12:28:25,333 INFO    SenderThread:1855894 [sender.py:transition_state():613] send defer: 5
+2024-02-28 12:28:25,334 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: defer
+2024-02-28 12:28:25,335 INFO    HandlerThread:1855894 [handler.py:handle_request_defer():172] handle defer: 5
+2024-02-28 12:28:25,335 DEBUG   SenderThread:1855894 [sender.py:send():380] send: summary
+2024-02-28 12:28:25,340 INFO    SenderThread:1855894 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-02-28 12:28:25,341 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: defer
+2024-02-28 12:28:25,342 INFO    SenderThread:1855894 [sender.py:send_request_defer():609] handle sender defer: 5
+2024-02-28 12:28:25,342 INFO    SenderThread:1855894 [sender.py:transition_state():613] send defer: 6
+2024-02-28 12:28:25,342 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: defer
+2024-02-28 12:28:25,343 INFO    HandlerThread:1855894 [handler.py:handle_request_defer():172] handle defer: 6
+2024-02-28 12:28:25,343 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: defer
+2024-02-28 12:28:25,344 INFO    SenderThread:1855894 [sender.py:send_request_defer():609] handle sender defer: 6
+2024-02-28 12:28:25,349 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: status_report
+2024-02-28 12:28:25,426 INFO    SenderThread:1855894 [sender.py:transition_state():613] send defer: 7
+2024-02-28 12:28:25,426 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: defer
+2024-02-28 12:28:25,427 INFO    HandlerThread:1855894 [handler.py:handle_request_defer():172] handle defer: 7
+2024-02-28 12:28:25,428 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: defer
+2024-02-28 12:28:25,428 INFO    SenderThread:1855894 [sender.py:send_request_defer():609] handle sender defer: 7
+2024-02-28 12:28:25,544 INFO    Thread-12 :1855894 [dir_watcher.py:_on_file_modified():288] file/dir modified: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/config.yaml
+2024-02-28 12:28:25,545 INFO    Thread-12 :1855894 [dir_watcher.py:_on_file_created():271] file/dir created: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/wandb-summary.json
+2024-02-28 12:28:25,833 INFO    SenderThread:1855894 [sender.py:transition_state():613] send defer: 8
+2024-02-28 12:28:25,833 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: defer
+2024-02-28 12:28:25,834 INFO    HandlerThread:1855894 [handler.py:handle_request_defer():172] handle defer: 8
+2024-02-28 12:28:25,835 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: defer
+2024-02-28 12:28:25,836 INFO    SenderThread:1855894 [sender.py:send_request_defer():609] handle sender defer: 8
+2024-02-28 12:28:25,836 INFO    SenderThread:1855894 [job_builder.py:build():281] Attempting to build job artifact
+2024-02-28 12:28:25,837 INFO    SenderThread:1855894 [job_builder.py:_get_source_type():393] is repo sourced job
+2024-02-28 12:28:25,843 INFO    SenderThread:1855894 [job_builder.py:build():369] adding wandb-job metadata file
+2024-02-28 12:28:25,863 INFO    SenderThread:1855894 [sender.py:transition_state():613] send defer: 9
+2024-02-28 12:28:25,864 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: defer
+2024-02-28 12:28:25,864 DEBUG   SenderThread:1855894 [sender.py:send():380] send: artifact
+2024-02-28 12:28:25,865 INFO    HandlerThread:1855894 [handler.py:handle_request_defer():172] handle defer: 9
+2024-02-28 12:28:25,873 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-28 12:28:26,227 INFO    SenderThread:1855894 [sender.py:send_artifact():1456] sent artifact job-git_github.com_greddy992_graph-reps.git_pytorch_implementation_train_graphs.py - {'id': 'QXJ0aWZhY3Q6NzM0NjM4ODIx', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE0MTI0NDAyNA==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NzM0NjM4ODIx', 'versionIndex': 3}}}
+2024-02-28 12:28:26,227 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: defer
+2024-02-28 12:28:26,227 INFO    SenderThread:1855894 [sender.py:send_request_defer():609] handle sender defer: 9
+2024-02-28 12:28:26,228 INFO    SenderThread:1855894 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-02-28 12:28:26,545 INFO    Thread-12 :1855894 [dir_watcher.py:_on_file_modified():288] file/dir modified: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/output.log
+2024-02-28 12:28:26,546 INFO    SenderThread:1855894 [dir_watcher.py:finish():388] scan: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files
+2024-02-28 12:28:26,548 INFO    SenderThread:1855894 [dir_watcher.py:finish():402] scan save: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/conda-environment.yaml conda-environment.yaml
+2024-02-28 12:28:26,549 INFO    SenderThread:1855894 [dir_watcher.py:finish():402] scan save: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/config.yaml config.yaml
+2024-02-28 12:28:26,552 INFO    SenderThread:1855894 [dir_watcher.py:finish():402] scan save: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/output.log output.log
+2024-02-28 12:28:26,553 INFO    SenderThread:1855894 [dir_watcher.py:finish():402] scan save: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/requirements.txt requirements.txt
+2024-02-28 12:28:26,559 INFO    SenderThread:1855894 [dir_watcher.py:finish():402] scan save: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/wandb-metadata.json wandb-metadata.json
+2024-02-28 12:28:26,560 INFO    SenderThread:1855894 [dir_watcher.py:finish():402] scan save: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/wandb-summary.json wandb-summary.json
+2024-02-28 12:28:26,563 INFO    SenderThread:1855894 [sender.py:transition_state():613] send defer: 10
+2024-02-28 12:28:26,563 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: poll_exit
+2024-02-28 12:28:26,566 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: defer
+2024-02-28 12:28:26,567 INFO    HandlerThread:1855894 [handler.py:handle_request_defer():172] handle defer: 10
+2024-02-28 12:28:26,568 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: defer
+2024-02-28 12:28:26,569 INFO    SenderThread:1855894 [sender.py:send_request_defer():609] handle sender defer: 10
+2024-02-28 12:28:26,569 INFO    SenderThread:1855894 [file_pusher.py:finish():175] shutting down file pusher
+2024-02-28 12:28:26,783 INFO    wandb-upload_0:1855894 [upload_job.py:push():131] Uploaded file /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/conda-environment.yaml
+2024-02-28 12:28:26,844 INFO    wandb-upload_2:1855894 [upload_job.py:push():131] Uploaded file /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/output.log
+2024-02-28 12:28:26,874 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-28 12:28:26,875 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: poll_exit
+2024-02-28 12:28:26,922 INFO    wandb-upload_1:1855894 [upload_job.py:push():131] Uploaded file /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/config.yaml
+2024-02-28 12:28:26,943 INFO    wandb-upload_4:1855894 [upload_job.py:push():131] Uploaded file /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/wandb-summary.json
+2024-02-28 12:28:26,945 INFO    wandb-upload_3:1855894 [upload_job.py:push():131] Uploaded file /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/files/requirements.txt
+2024-02-28 12:28:27,147 INFO    Thread-11 :1855894 [sender.py:transition_state():613] send defer: 11
+2024-02-28 12:28:27,148 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: defer
+2024-02-28 12:28:27,149 INFO    HandlerThread:1855894 [handler.py:handle_request_defer():172] handle defer: 11
+2024-02-28 12:28:27,150 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: defer
+2024-02-28 12:28:27,151 INFO    SenderThread:1855894 [sender.py:send_request_defer():609] handle sender defer: 11
+2024-02-28 12:28:27,151 INFO    SenderThread:1855894 [file_pusher.py:join():181] waiting for file pusher
+2024-02-28 12:28:27,151 INFO    SenderThread:1855894 [sender.py:transition_state():613] send defer: 12
+2024-02-28 12:28:27,151 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: defer
+2024-02-28 12:28:27,152 INFO    HandlerThread:1855894 [handler.py:handle_request_defer():172] handle defer: 12
+2024-02-28 12:28:27,152 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: defer
+2024-02-28 12:28:27,153 INFO    SenderThread:1855894 [sender.py:send_request_defer():609] handle sender defer: 12
+2024-02-28 12:28:27,153 INFO    SenderThread:1855894 [file_stream.py:finish():595] file stream finish called
+2024-02-28 12:28:27,228 INFO    SenderThread:1855894 [file_stream.py:finish():599] file stream finish is done
+2024-02-28 12:28:27,228 INFO    SenderThread:1855894 [sender.py:transition_state():613] send defer: 13
+2024-02-28 12:28:27,229 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: defer
+2024-02-28 12:28:27,230 INFO    HandlerThread:1855894 [handler.py:handle_request_defer():172] handle defer: 13
+2024-02-28 12:28:27,230 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: defer
+2024-02-28 12:28:27,231 INFO    SenderThread:1855894 [sender.py:send_request_defer():609] handle sender defer: 13
+2024-02-28 12:28:27,231 INFO    SenderThread:1855894 [sender.py:transition_state():613] send defer: 14
+2024-02-28 12:28:27,231 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: defer
+2024-02-28 12:28:27,232 INFO    HandlerThread:1855894 [handler.py:handle_request_defer():172] handle defer: 14
+2024-02-28 12:28:27,232 DEBUG   SenderThread:1855894 [sender.py:send():380] send: final
+2024-02-28 12:28:27,232 DEBUG   SenderThread:1855894 [sender.py:send():380] send: footer
+2024-02-28 12:28:27,233 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: defer
+2024-02-28 12:28:27,234 INFO    SenderThread:1855894 [sender.py:send_request_defer():609] handle sender defer: 14
+2024-02-28 12:28:27,234 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-28 12:28:27,235 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-28 12:28:27,235 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: server_info
+2024-02-28 12:28:27,235 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: get_summary
+2024-02-28 12:28:27,236 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: sampled_history
+2024-02-28 12:28:27,236 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-28 12:28:27,235 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: poll_exit
+2024-02-28 12:28:27,238 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: poll_exit
+2024-02-28 12:28:27,239 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: server_info
+2024-02-28 12:28:27,238 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: job_info
+2024-02-28 12:28:27,287 DEBUG   SenderThread:1855894 [sender.py:send_request():407] send_request: job_info
+2024-02-28 12:28:27,288 INFO    MainThread:1855894 [wandb_run.py:_footer_history_summary_info():3599] rendering history
+2024-02-28 12:28:27,289 INFO    MainThread:1855894 [wandb_run.py:_footer_history_summary_info():3631] rendering summary
+2024-02-28 12:28:27,289 INFO    MainThread:1855894 [wandb_run.py:_footer_sync_info():3558] logging synced files
+2024-02-28 12:28:27,289 DEBUG   HandlerThread:1855894 [handler.py:handle_request():146] handle_request: shutdown
+2024-02-28 12:28:27,290 INFO    HandlerThread:1855894 [handler.py:finish():866] shutting down handler
+2024-02-28 12:28:28,243 INFO    WriterThread:1855894 [datastore.py:close():294] close: /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/wandb/run-20240228_122805-x45b6cw4/run-x45b6cw4.wandb
+2024-02-28 12:28:28,287 INFO    SenderThread:1855894 [sender.py:finish():1534] shutting down sender
+2024-02-28 12:28:28,288 INFO    SenderThread:1855894 [file_pusher.py:finish():175] shutting down file pusher
+2024-02-28 12:28:28,288 INFO    SenderThread:1855894 [file_pusher.py:join():181] waiting for file pusher

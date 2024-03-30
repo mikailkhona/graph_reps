@@ -1,0 +1,14 @@
+/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/torch/cuda/amp/grad_scaler.py:125: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs.py", line 170, in <module>
+    loss_value = criterion(outputs, test[:,2]).item()
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/losses.py", line 45, in forward
+    numerator = torch.exp(positives / self.temperature)
+  File "/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1695, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'NTXEntLoss' object has no attribute 'temperature'

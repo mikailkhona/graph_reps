@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs.py", line 185, in <module>
+    index, bias1, bias2, ps = model_graph.compute_bias(G, model)
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/model_graph.py", line 56, in compute_bias
+    filt1 = (index[:,0] == start)*(index[:,1] == goal)*(index[:,3] == 0)
+KeyboardInterrupt

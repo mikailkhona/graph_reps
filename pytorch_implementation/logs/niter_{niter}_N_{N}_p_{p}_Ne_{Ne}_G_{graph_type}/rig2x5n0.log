@@ -1,0 +1,33 @@
+/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/torch/cuda/amp/grad_scaler.py:125: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(
+4.606452465057373
+/om2/user/mikail/miniconda3/envs/rlincontext/lib/python3.9/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(
+4.360846519470215
+3.6654775142669678
+3.0314252376556396
+2.700915575027466
+2.5149617195129395
+2.409167528152466
+2.3527495861053467
+2.2944979667663574
+2.261489152908325
+2.244688034057617
+2.228213310241699
+2.216047525405884
+2.2033421993255615
+2.203965425491333
+Traceback (most recent call last):
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs.py", line 154, in <module>
+    index, bias1, bias2, ps = model_graph.compute_bias(G, model)
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/model_graph.py", line 56, in compute_bias
+    filt1 = (index[:,0] == start)*(index[:,1] == goal)*(index[:,3] == 0)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs.py", line 154, in <module>
+    index, bias1, bias2, ps = model_graph.compute_bias(G, model)
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/model_graph.py", line 56, in compute_bias
+    filt1 = (index[:,0] == start)*(index[:,1] == goal)*(index[:,3] == 0)
+KeyboardInterrupt

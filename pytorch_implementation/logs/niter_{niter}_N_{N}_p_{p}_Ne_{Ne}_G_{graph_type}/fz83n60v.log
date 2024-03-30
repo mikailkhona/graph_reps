@@ -1,0 +1,19 @@
+0.9991546273231506
+0.8260639905929565
+0.296871155500412
+-0.9687770009040833
+-3.0961363315582275
+-6.265281677246094
+-9.946657180786133
+nan
+nan
+nan
+nan
+nan
+nan
+Traceback (most recent call last):
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs.py", line 185, in <module>
+    index, bias1, bias2, ps = model_graph.compute_bias(G, model)
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/model_graph.py", line 61, in compute_bias
+    ps_opt = np.mean((label_probs[filt1,index[filt1,2]]))
+KeyboardInterrupt

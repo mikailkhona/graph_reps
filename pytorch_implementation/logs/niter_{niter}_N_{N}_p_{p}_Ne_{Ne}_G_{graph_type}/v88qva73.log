@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/net/vast-storage.ib.cluster/scratch/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs_cuda.py", line 189, in <module>
+    entropy = -softmaxed_preds*torch.log(softmaxed_preds)
+NameError: name 'softmaxed_preds' is not defined

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs_cuda.py", line 170, in <module>
+    loss = torch.log(softmaxed_preds[torch.arange(softmaxed_preds.shape[0]),label_idxs]) + torch.log(1-(softmaxed_preds[torch.arange(softmaxed_preds.shape[0]), random_idxs])) + lambda_entropy_reg*softmaxed_preds*torch.log(softmaxed_preds).mean()
+RuntimeError: The size of tensor a (128) must match the size of tensor b (100) at non-singleton dimension 1

@@ -1,0 +1,288 @@
+{
+    "os": "Linux-3.10.0-1062.el7.x86_64-x86_64-with-glibc2.17",
+    "python": "3.9.18",
+    "heartbeatAt": "2024-02-28T12:20:35.805270",
+    "startedAt": "2024-02-28T12:20:35.088009",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs.py",
+    "codePathLocal": "train_graphs.py",
+    "codePath": "pytorch_implementation/train_graphs.py",
+    "git": {
+        "remote": "git@github.com:greddy992/graph-reps.git",
+        "commit": "9cf1e28b8b95bd0892df4f86779caf0902226d55"
+    },
+    "email": null,
+    "root": "/rdma/vast-rdma/vast/fiete/mikail/graph-reps",
+    "host": "node034",
+    "username": "mikail",
+    "executable": "/om2/user/mikail/miniconda3/envs/rlincontext/bin/python3",
+    "cpu_count": 24,
+    "cpu_count_logical": 48,
+    "cpu_freq": {
+        "current": 2.7100416666666653,
+        "min": 1200.0,
+        "max": 3500.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1.233,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.6,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.6,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3.001,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3.0,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 1.971,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3.008,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3.011,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3.013,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 1.229,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 1.2,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 1.245,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3.0,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.6,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.6,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3.0,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3.0,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3.007,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3.007,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 1.972,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.999,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 1.241,
+            "min": 1200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 1.253,
+            "min": 1200.0,
+            "max": 3500.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 351.50157928466797,
+            "used": 9.642959594726562
+        }
+    },
+    "gpu": "GeForce GTX TITAN X",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "GeForce GTX TITAN X",
+            "memory_total": 12806062080
+        }
+    ],
+    "memory": {
+        "total": 251.24130630493164
+    }
+}
