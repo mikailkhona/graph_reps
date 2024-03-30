@@ -53,18 +53,25 @@ class NTXEntLoss(nn.Module):
         return loss
 
 
-def contrastiveLoss(preds, labels):   
-        softmaxed_preds = F.softmax(preds, dim=-1)
+class ContrastiveLoss(nn.Module):
+    def __init__(self):
+        super(ContrastiveLoss, self).__init__()
 
-        # argmax'ed labels
-        label_idxs = torch.argmax(labels,dim=1)
+    def forward(self, preds):
+        return -torch.diag(preds) + torch.logsumexp(preds, dim=1)
 
-        #random labels
-        random_idxs = torch.randint(low=0, high=softmaxed_preds.shape[1],size=(softmaxed_preds.shape[0],))
+# def contrastiveLoss(preds, labels):   
+#         softmaxed_preds = F.softmax(preds, dim=-1)
 
-        loss = torch.log(softmaxed_preds[torch.arange(softmaxed_preds.shape[0]),label_idxs]) + torch.log(1-(softmaxed_preds[torch.arange(softmaxed_preds.shape[0]), random_idxs]))
+#         # argmax'ed labels
+#         label_idxs = torch.argmax(labels,dim=1)
 
-        return loss
+#         #random labels
+#         random_idxs = torch.randint(low=0, high=softmaxed_preds.shape[1],size=(softmaxed_preds.shape[0],))
+
+#         loss = torch.log(softmaxed_preds[torch.arange(softmaxed_preds.shape[0]),label_idxs]) + torch.log(1-(softmaxed_preds[torch.arange(softmaxed_preds.shape[0]), random_idxs]))
+
+#         return loss
 
 
 # def align_unif(log_lambda, real, noise, batch_size):

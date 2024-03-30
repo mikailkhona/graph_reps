@@ -1,0 +1,76 @@
+Traceback (most recent call last):
+  File "/home/gridsan/mkhona/graph_reps/pytorch_implementation/train_graphs_cuda.py", line 55, in <module>
+    fp = open_log(deploy, tag=run_string)
+NameError: name 'open_log' is not defined
+> /home/gridsan/mkhona/graph_reps/pytorch_implementation/train_graphs_cuda.py(68)<module>()
+-> if graph_type == "bernoulli":
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) > /home/gridsan/mkhona/graph_reps/pytorch_implementation/train_graphs_cuda.py(68)<module>()
+-> if graph_type == "bernoulli":
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) Graph created, of type  bernoulli
+(Pdb) (Pdb) Traceback (most recent call last):
+  File "/home/gridsan/mkhona/graph_reps/pytorch_implementation/train_graphs_cuda.py", line 105, in <module>
+    triplets,_ = graphs.generate_batch(G,batch_size=train_batch_size, split='train')
+  File "/home/gridsan/mkhona/graph_reps/pytorch_implementation/graphs.py", line 102, in generate_batch
+    goal,start = np.random.choice(num_nodes,2,replace=False)
+  File "mtrand.pyx", line 965, in numpy.random.mtrand.RandomState.choice
+  File "<__array_function__ internals>", line 200, in prod
+  File "/state/partition1/llgrid/pkg/anaconda/python-LLM-2023b/lib/python3.10/site-packages/numpy/core/fromnumeric.py", line 3076, in prod
+    return _wrapreduction(a, np.multiply, 'prod', axis, dtype, out,
+  File "/state/partition1/llgrid/pkg/anaconda/python-LLM-2023b/lib/python3.10/site-packages/numpy/core/fromnumeric.py", line 70, in _wrapreduction
+    passkwargs = {k: v for k, v in kwargs.items()
+  File "/state/partition1/llgrid/pkg/anaconda/python-LLM-2023b/lib/python3.10/site-packages/numpy/core/fromnumeric.py", line 70, in <dictcomp>
+    passkwargs = {k: v for k, v in kwargs.items()
+  File "/state/partition1/llgrid/pkg/anaconda/python-LLM-2023b/lib/python3.10/site-packages/numpy/core/fromnumeric.py", line 70, in <dictcomp>
+    passkwargs = {k: v for k, v in kwargs.items()
+  File "/state/partition1/llgrid/pkg/anaconda/python-LLM-2023b/lib/python3.10/bdb.py", line 90, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/state/partition1/llgrid/pkg/anaconda/python-LLM-2023b/lib/python3.10/bdb.py", line 115, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+Graph created, of type  bernoulli
+(Pdb) Traceback (most recent call last):
+  File "/home/gridsan/mkhona/graph_reps/pytorch_implementation/train_graphs_cuda.py", line 119, in <module>
+    preds = model(triplets)
+  File "/state/partition1/llgrid/pkg/anaconda/python-LLM-2023b/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/gridsan/mkhona/graph_reps/pytorch_implementation/model_graph.py", line 197, in forward
+    vstart = self.Ws(inputs[:,0,:])
+  File "/state/partition1/llgrid/pkg/anaconda/python-LLM-2023b/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/state/partition1/llgrid/pkg/anaconda/python-LLM-2023b/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/state/partition1/llgrid/pkg/anaconda/python-LLM-2023b/lib/python3.10/bdb.py", line 94, in trace_dispatch
+    return self.dispatch_return(frame, arg)
+  File "/state/partition1/llgrid/pkg/anaconda/python-LLM-2023b/lib/python3.10/bdb.py", line 156, in dispatch_return
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+> /home/gridsan/mkhona/graph_reps/pytorch_implementation/train_graphs_cuda.py(69)<module>()
+-> if graph_type == "bernoulli":
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) 

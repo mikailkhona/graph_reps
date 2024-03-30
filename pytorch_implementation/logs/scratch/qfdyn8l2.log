@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/gridsan/mkhona/graph_reps/pytorch_implementation/train_graphs_cuda.py", line 51, in <module>
+    fp = open_log(deploy, tag=run_string)
+NameError: name 'open_log' is not defined
