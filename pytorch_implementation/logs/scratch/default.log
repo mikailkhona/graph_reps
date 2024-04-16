@@ -73,4 +73,113 @@ bdb.BdbQuit
 (Pdb) --KeyboardInterrupt--
 (Pdb) --KeyboardInterrupt--
 (Pdb) --KeyboardInterrupt--
+(Pdb) Graph created, of type  bernoulli
+2.3067474365234375
+1.8850898742675781
+1.568929672241211
+1.2664413452148438
+1.0937533378601074
+1.042999267578125
+1.002983808517456
+0.9807815551757812
+0.9750492572784424
+0.8684141635894775
+0.8800376653671265
+0.8825455904006958
+0.8716487288475037
+0.9331722259521484
+0.8524170517921448
+0.884687602519989
+0.7723510265350342
+0.9247029423713684
+0.8506631851196289
+0.8749932646751404
+0.8363779783248901
+0.8977583646774292
+0.8276435136795044
+0.8425811529159546
+0.8774111270904541
+0.8356990814208984
+0.9551719427108765
+0.8770307302474976
+0.8891372680664062
+0.7761979103088379
+0.8052934408187866
+0.8295254111289978
+0.9008382558822632
+0.883481502532959
+0.8015823364257812
+0.8732934594154358
+0.8703956604003906
+0.861923098564148
+0.8766440153121948
+0.8218744993209839
+0.861680269241333
+0.8429049253463745
+0.8724648952484131
+0.8533393144607544
+0.8302611112594604
+0.8324093818664551
+0.8979259133338928
+0.8919494152069092
+0.7839017510414124
+0.8260076642036438
+0.8928489685058594
+0.8344624042510986
+0.8982985615730286
+0.8290343284606934
+0.8332318067550659
+0.8289922475814819
+0.8854421377182007
+0.8940463066101074
+0.8584502935409546
+0.8739599585533142
+0.7964248657226562
+0.8085756301879883
+0.8557190895080566
+0.818579375743866
+0.7775002121925354
+0.8073278069496155
+0.8927971124649048
+0.7723507285118103
+0.788271427154541
+0.8133976459503174
+0.8276873826980591
+0.8073980808258057
+0.8686897158622742
+0.9063575863838196
+0.8614743947982788
+0.8484827280044556
+0.8366397023200989
+0.8869802951812744
+Traceback (most recent call last):
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs_cuda_old.py", line 120, in <module>
+    triplets,_ = graphs.generate_batch_old(
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/graphs.py", line 197, in generate_batch_old
+    nexts[i] = np.random.choice(num_nodes, p=G.nodes[goals[i]]['policy'][starts[i]])
+KeyboardInterrupt
+Graph created, of type  bernoulli
+Traceback (most recent call last):
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs_cuda_old.py", line 119, in <module>
+    ipdb.set_trace()
+NameError: name 'ipdb' is not defined. Did you mean: 'pdb'?
+Graph created, of type  bernoulli
+Traceback (most recent call last):
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs_cuda_old.py", line 119, in <module>
+    ipdb.set_trace()
+NameError: name 'ipdb' is not defined. Did you mean: 'pdb'?
+Traceback (most recent call last):
+  File "/rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs_cuda_old.py", line 67, in <module>
+    ipdb.set_trace()
+NameError: name 'ipdb' is not defined. Did you mean: 'pdb'?
+> /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs_cuda_old.py(62)<module>()
+-> eval_iters = 50
+(Pdb) > /rdma/vast-rdma/vast/fiete/mikail/graph-reps/pytorch_implementation/train_graphs_cuda_old.py(62)<module>()
+-> eval_iters = 50
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
+(Pdb) --KeyboardInterrupt--
 (Pdb) 

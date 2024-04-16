@@ -10,13 +10,11 @@ import os
 import model_graph
 import random
 import torch.nn as nn
-from plot import plot_embeddings_adjacencies
+from plot_graph import plot_embeddings_adjacencies, plot_neighbour, plot_and_fit_short_bias
 import argparse
-import pdb
-import sys
 from utils import cleanup, set_seed, initialize_and_log
 import pdb
-
+import wandb
 from losses import ContrastiveLoss
 
 # Create the parser
@@ -26,8 +24,10 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--deploy', action='store_true', help='foo help')
 parser.add_argument('--niter', help='foo help')
 parser.add_argument('--N', help='foo help')
+parser.add_argument('--frac', help='foo help')
 parser.add_argument('--p', help='foo help')
 parser.add_argument('--Ne', help='foo help')
+
 parser.add_argument('--graph_type', help='foo help')
 parser.add_argument('--loss_fn', help='foo help')
 
@@ -38,29 +38,30 @@ args = parser.parse_args()
 deploy = args.deploy
 niter = int(args.niter)
 N = int(args.N)
+frac = float(args.frac)
 p = float(args.p)
 Ne = int(args.Ne)
 graph_type = args.graph_type
 loss_fn = args.loss_fn
 
+
 if deploy: 
     print("Deploying with wandb")
 
-# initialize_and_log(deploy, tag='scratch', wandb_project_name='graph_contrastive')
+initialize_and_log(deploy, tag='scratch', wandb_project_name='graph_contrastive')
 
 set_seed(0)
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-run_string = "niter_{niter}_N_{N}_p_{p}_Ne_{Ne}_G_{graph_type}"
+run_string = f"niter_{niter}_N_{N}_p_{p}_Ne_{Ne}_G_{graph_type}"
 
 prefix = "./out/" + run_string
 
 eval_iters = 50
-entropy_log_iters = 10
 nruns = 3
 lambda_entropy_reg = 0.1
-train_batch_size = 4096
+train_batch_size = 256
 test_batch_size = 1000
 store = False
 
@@ -70,11 +71,11 @@ if device=='cuda':
     scaler = torch.cuda.amp.GradScaler()
 
 if graph_type == "bernoulli":
-    G = graphs.create_bernoulli_graph(num_nodes = N, p = p)
+    G = model_graph.create_bernoulli_graph(num_nodes = N, p = p)
 elif graph_type == "spoke":
-    G = graphs.create_spoke_graph(num_nodes = N)
+    G = model_graph.create_spoke_graph(num_nodes = N)
 elif graph_type == "ring":
-    G = graphs.create_ring_graph(num_nodes = N)
+    G = model_graph.create_ring_graph(num_nodes = N)
 else: 
     print("Graph type not recognized")
     sys.exit()
@@ -82,17 +83,21 @@ else:
 print('Graph created, of type ', graph_type)
 
 num_nodes = G.number_of_nodes()
-G, best_loss, assigned_split = graphs.compute_policy_degen(G)
+G, best_loss, assigned_split = graphs.compute_policy_degen_modified(G, frac=frac)
 tprobs = np.zeros((num_nodes,num_nodes))
+
 for i in range(num_nodes):
     tprobs[i] = G.nodes[i]['tprobs']
+# generate eval data
+test,_ = graphs.generate_batch(
+                            G, 
+                            assigned_split=assigned_split,
+                            batch_size=test_batch_size, 
+                            split='test'
+                            )
 
-model = model_graph.LinearContrastiveModel(num_nodes=num_nodes, Ne=Ne).to(device)
-
-test,_ = graphs.generate_batch(G, batch_size=test_batch_size, split='test')
 test = torch.tensor(test, dtype=torch.float32).to(device)
 
-optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3)
 
 bias1s = []
 bias2s = []
@@ -101,12 +106,23 @@ entropies = []
 
 if loss_fn == 'simple_contrastive':
     criterion = ContrastiveLoss()
+    model = model_graph.LinearContrastiveModel(num_nodes=num_nodes, Ne=Ne).to(device)
 
-elif loss_fun == 'cross_entropy':
+
+elif loss_fn == 'cross_entropy':
     criterion = nn.CrossEntropyLoss()
-
+    model = model_graph.LinearModel(num_nodes=num_nodes, Ne=Ne).to(device)
+    
+optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3)
 for i in range(niter):
-    triplets,_ = graphs.generate_batch(G,batch_size=train_batch_size, split='train')
+
+    triplets,_ = graphs.generate_batch(
+                                    G, 
+                                    assigned_split=assigned_split,
+                                    batch_size=train_batch_size, 
+                                    split='train'
+                                    )
+                                    
     # triplets: (batch, (goal, start, next), num_nodes)
     triplets = torch.tensor(triplets, dtype=torch.float32).to(device)
     # create input and labels
@@ -144,17 +160,18 @@ for i in range(niter):
             
             
             if loss_fn == 'cross_entropy':
-                index, bias1, bias2, ps = model_graph.compute_bias(G, model)
+                index, bias1, bias2, ps = graphs.compute_bias(G, model)
                 # entropy = -softmaxed_preds*torch.log(softmaxed_preds)
                 # entropy = entropy.mean().item()
                 # entropies.append(entropy)
                 outputs = model(test[:,:2])
-                loss_value = criterion(outputs, test[:,2]).item()
+                loss = criterion(outputs, test[:,2])
 
             elif loss_fn == 'simple_contrastive':
-                bias1, bias2, ps = model_graph.compute_bias_contrastive(G, model)
+                bias1, bias2, ps = graphs.compute_bias_contrastive(G, model)
                 outputs = model(test)
-                loss = - torch.diag(outputs) + torch.logsumexp(outputs, dim=1)
+                # loss = - torch.diag(outputs) + torch.logsumexp(outputs, dim=1)
+                loss = criterion(outputs)
 
             loss_value = loss.mean().item()
 
@@ -164,22 +181,29 @@ for i in range(niter):
         losses.append(loss_value)
 
         evals = {
-                    "loss":loss_value,
-                    "bias1":np.mean(bias1), 
-                    "bias2":np.mean(bias2), 
-                    "best_loss":best_loss,
-                    }
+                "loss":loss_value,
+                "bias1":np.mean(bias1), 
+                "bias2":np.mean(bias2), 
+                "best_loss":best_loss,
+                }
 
-        # ipdb.set_trace()
-        # figure1 = plot_embeddings_adjacencies(model.Wu.weight.data.cpu().detach().numpy(), model.We.weight.data.cpu().detach().numpy(), model.V.weight.data.cpu().detach().numpy(), G)
+        non_bias_weights = {} 
+        for name, param in model.named_parameters():
+            if "bias" not in name:
+                non_bias_weights[name] = param.data.detach().cpu().numpy().copy()
+
+        figure1, start_next, goal_next = plot_embeddings_adjacencies(non_bias_weights, G, loss_fn)
+        figure2, neighbors_mean, nneighbors_mean = plot_neighbour(G, start_next)
+        figure3, ps, r2 = plot_and_fit_short_bias(G, goal_next)
 
         if deploy:
             wandb.log(evals)
-            # wandb.log({"embeddings": figure1})
+            wandb.log({"embeddings_and_adjacency": figure1})
+            wandb.log({"neighbour": wandb.Image(figure2)})
+            wandb.log({"short_path_bias": wandb.Image(figure3)})
 
 if store:
     if not os.path.exists(prefix):
-
         os.makedirs(prefix)
 
     np.savez(prefix + "/iter%d"%ii, np.array(losses), index , np.array(bias1s), np.array(bias2s), np.array([best_loss]), np.array(tprobs))

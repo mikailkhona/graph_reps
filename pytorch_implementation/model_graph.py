@@ -4,151 +4,50 @@ import torch
 import torch.nn.functional as F
 import torch.nn as nn
 import pdb
+import networkx as nx
+import random
 
-def compute_bias_contrastive(G, model):
-    ''''
-    Compute the bias of the model's 1 step prediction
-    '''
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    num_nodes = G.number_of_nodes()
-    bias1 = []
-    bias2 = []
-    entropies = []
+def create_linear_graph(num_nodes = 5):
+    G = nx.Graph()
+    for i in range(num_nodes - 1):
+        G.add_edge(i, i + 1)
+    return G
 
-    ps = np.zeros((num_nodes,num_nodes))
+def create_ring_graph(num_nodes = 5):
+    G = nx.Graph()
+    for i in range(num_nodes - 1):
+        G.add_edge(i, i + 1)
+    G.add_edge(num_nodes - 1, 0)
+    return G
 
-    for start in range(num_nodes):
-        for goal in range(num_nodes):
-            index = []
-            triplets_raw_all = []
-            p = G.nodes[goal]['policy'][start]
-            ent = -np.mean(p*np.log(p + 1e-10))
+def create_spoke_graph(num_nodes = 5):
+    G = nx.Graph()
+    for i in range(num_nodes - 1):
+        G.add_edge(i, i + 1)
+    G.add_edge(num_nodes - 1, 0)
+    for i in range(num_nodes, 2*num_nodes):
+        G.add_edge(i - num_nodes, i)
+    return G
 
-            if ent > 1e-5:
-                start_neighbors = list(G.neighbors(start))
-                # take a step towards goal 
-                filt1 =  G.nodes[goal]['distance_to_goal'][start_neighbors] == G.nodes[goal]['distance_to_goal'][start] - 1
-                # take a step not towards goal
-                filt2 =  G.nodes[goal]['distance_to_goal'][start_neighbors] == G.nodes[goal]['distance_to_goal'][start]
-                opt = [start_neighbors[i] for i,f in enumerate(start_neighbors) if filt1[i]]
-                subopt = [start_neighbors[i] for i,f in enumerate(start_neighbors) if filt2[i]]
+def create_bernoulli_digraph(num_nodes = 5, p = 0.2):
+    A = np.triu(np.random.choice(2, size = (num_nodes, num_nodes), p = [1 - p, p]), k = 1)
+    G = nx.from_numpy_array(A, create_using=nx.DiGraph)
+    G.remove_nodes_from(list(nx.isolates(G)))
+    G = nx.convert_node_labels_to_integers(G)
+    largest_cc = max(nx.connected_components(G), key=len)
+    G = G.subgraph(largest_cc).copy()
+    G = nx.convert_node_labels_to_integers(G)
+    return G
 
-                for ni,next in enumerate(opt):
-                    triplets_raw = np.array([start,goal,next])
-                    triplets = np.eye(num_nodes)[triplets_raw]
-                    index += [[start,goal,next,0]]
-                    triplets_raw_all.append(triplets_raw)
-                    
-                for ni,next in enumerate(subopt):
-                    triplets_raw = np.array([start,goal,next])
-                    triplets = np.eye(num_nodes)[triplets_raw]
-
-                    index += [[start,goal,next,1]]
-                    triplets_raw_all.append(triplets_raw)
-
-                # all triplets have the same start and goal
-                triplets_raw_all = np.array(triplets_raw_all)
-                index = np.array(index)
-                triplets = np.eye(num_nodes)[triplets_raw_all]
-                triplets = torch.tensor(triplets, dtype=torch.float32).to(device)
-
-                # get model output for the whole batch, which by construction has same start, goal and all possible next's
-                # [start, goal, next]
-                outputs = model(triplets)
-                # extra the diagonal: the model prediction for each next
-                model_preds = torch.diag(outputs)
-                # since start, goal is the same and exp of output is \propto the Q value, we can take softmax to get the model's policy function
-                label_probs = F.softmax(model_preds,dim=-1)
-                label_probs = label_probs.cpu().detach().numpy()
-
-                # label probs is now 1 dimensional, representing the policy for a single start, goal pair
-                # same analysis as before for calculating the bias
-
-                # filt is basically index
-                filt1 = (index[:,0] == start)*(index[:,1] == goal)*(index[:,3] == 0)
-                filt2 = (index[:,0] == start)*(index[:,1] == goal)*(index[:,3] == 1)
-
-                if np.sum(filt1) > 0 and np.sum(filt2) > 0:
-            
-                    ps_opt = np.mean((label_probs[filt1]))
-                    ps_subopt = np.mean((label_probs[filt2]))
-
-                    bias1 += [np.log(ps_opt/ps_subopt)]
-                    bias2 += [ps_opt-ps_subopt]
-                    entropy = -np.mean(label_probs*np.log(label_probs))
-
-
-                    ps[start,goal] = np.sum(label_probs[filt1 + filt2])
-                    entropies.append(entropy)
-
-            
-    return np.array(bias1), np.array(bias2), ps
-
-def compute_bias(G, model):
-    ''''
-    Compute the bias of the model's 1 step prediction
-    '''
-
-    num_nodes = G.number_of_nodes()
-    bias1 = []
-    bias2 = []
-    index = []
-    triplets_raw_all = []
-    ps = np.zeros((num_nodes,num_nodes))
-
-    for start in range(num_nodes):
-        for goal in range(num_nodes):
-            p = G.nodes[goal]['policy'][start]
-            ent = -np.mean(p*np.log(p + 1e-10))
-            if ent > 1e-5:
-                start_neighbors = list(G.neighbors(start))
-                filt1 =  G.nodes[goal]['distance_to_goal'][start_neighbors] == G.nodes[goal]['distance_to_goal'][start] - 1
-                filt2 =  G.nodes[goal]['distance_to_goal'][start_neighbors] == G.nodes[goal]['distance_to_goal'][start]
-                opt = [start_neighbors[i] for i,f in enumerate(start_neighbors) if filt1[i]]
-                subopt = [start_neighbors[i] for i,f in enumerate(start_neighbors) if filt2[i]]
-
-                for ni,next in enumerate(opt):
-                    triplets_raw = np.array([start,goal,next])
-                    triplets = np.eye(num_nodes)[triplets_raw]
-                    index += [[start,goal,next,0]]
-                    triplets_raw_all.append(triplets_raw)
-                    
-                for ni,next in enumerate(subopt):
-                    triplets_raw = np.array([start,goal,next])
-                    triplets = np.eye(num_nodes)[triplets_raw]
-                    index += [[start,goal,next,1]]
-                    triplets_raw_all.append(triplets_raw)
-
-
-    triplets_raw_all = np.array(triplets_raw_all)
-    index = np.array(index)
-    triplets = np.eye(num_nodes)[triplets_raw_all]
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    triplets = torch.tensor(triplets, dtype=torch.float32).to(device)
-    
-
-    outputs = model(triplets[:,:2])
-    label_probs = F.softmax(outputs,dim=-1)
-    label_probs = label_probs.cpu().detach().numpy()
-
-
-    for start in range(num_nodes):
-        for goal in range(num_nodes):
-            filt1 = (index[:,0] == start)*(index[:,1] == goal)*(index[:,3] == 0)
-            filt2 = (index[:,0] == start)*(index[:,1] == goal)*(index[:,3] == 1)
-
-            if np.sum(filt1) > 0 and np.sum(filt2) > 0:
-        
-                ps_opt = np.mean((label_probs[filt1,index[filt1,2]]))
-                ps_subopt = np.mean((label_probs[filt2,index[filt2,2]]))
-
-                bias1 += [np.log(ps_opt/ps_subopt)]
-                bias2 += [ps_opt-ps_subopt]
-
-
-            ps[start,goal] = np.sum(label_probs[filt1 + filt2, index[filt1 + filt2,2]])
-
-    return index, np.array(bias1), np.array(bias2), ps
+def create_bernoulli_graph(num_nodes = 5, p = 0.2):
+    A = np.triu(np.random.choice(2, size = (num_nodes, num_nodes), p = [1 - p, p]), k = 1)
+    G = nx.from_numpy_array(A, create_using=nx.Graph)
+    G.remove_nodes_from(list(nx.isolates(G)))
+    G = nx.convert_node_labels_to_integers(G)
+    largest_cc = max(nx.connected_components(G), key=len)
+    G = G.subgraph(largest_cc).copy()
+    G = nx.convert_node_labels_to_integers(G)
+    return G
 
 
 class LinearModel(nn.Module):
